@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:w1n/costanti/coloriestili.dart';
 import 'package:w1n/loginsignup/login.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]).then((_){
+    runApp(MyApp());
+  });
+}
 
 class MyApp extends StatelessWidget {
   @override

@@ -7,6 +7,8 @@ import 'package:w1n/costanti/coloriestili.dart';
 import 'package:w1n/loginsignup/loginparts/background.dart';
 import 'package:w1n/loginsignup/loginparts/inputwidgets.dart';
 import 'package:w1n/loginsignup/loginparts/pulsanterettangolarearrotondato.dart';
+import 'package:w1n/loginsignup/signup.dart';
+import 'package:w1n/pagetransitions/rotatescaletransition.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -71,7 +73,7 @@ class LoginState extends State<Login>{
         GestureDetector(
           onTap: () {
             // Navigator.of(context).push(MaterialPageRoute(builder: (context) => NuovoSignup()));
-            Navigator.pushNamed(context, "/signup");
+            Navigator.of(context).push(ScaleRotateRoute(page: NuovoSignup()));
           },
           child: PulsanteRettangolareArrotondato(
               "Crea un Account", signInGradients, false),
@@ -164,11 +166,13 @@ class LoginState extends State<Login>{
   }
 
 
+
   Widget passworddimenticata(){
     return Center(
         child: GestureDetector(
             onTap: (){
              // Navigator.of(context).push(MaterialPageRoute(builder: (c) => PasswordDimenticata(emailcorrente: emailcontroller.text,)));
+
             },
             child: Text("Password dimenticata?",
                 style: testosemplice16sottolineato)

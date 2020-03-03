@@ -35,6 +35,9 @@ final TextStyle testosemplice16sottolineato = TextStyle(color: Color(0xFFA0A0A0)
 final TextStyle stiletestoappbar = TextStyle(color: Colors.white,
     fontSize: 22, fontWeight: FontWeight.w700, fontFamily: fontfamily);
 
+final TextStyle titolonuovo =
+new TextStyle(fontFamily: fontfamily , fontSize: 20 , fontWeight: FontWeight.w700, color: azzurroscuro);
+
 // GRADIENTS
 
 
