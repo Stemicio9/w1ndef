@@ -62,12 +62,12 @@ class LoginState extends State<Login>{
               .size
               .height / 3.6),
         ),
-        partecontextfields(),
-        spazio(15),
+        partecontextfields(context),
+        spazio(context,45),
         passworddimenticata(),
-        spazio(15),
+        spazio(context,45),
         accessoconsocial(),
-        spazio(20),
+        spazio(context,40),
         GestureDetector(
           onTap: () {
             // Navigator.of(context).push(MaterialPageRoute(builder: (context) => NuovoSignup()));
@@ -86,7 +86,7 @@ class LoginState extends State<Login>{
 
 
 
-  Widget partecontextfields(){
+  Widget partecontextfields(context){
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
@@ -101,23 +101,23 @@ class LoginState extends State<Login>{
           ),
         ),
         Stack(
-          alignment: Alignment.bottomRight,
+          alignment: Alignment.bottomLeft,
           children: <Widget>[
             InputWidget(30.0, 0.0, "email@esempio.com", "password",
                 emailcontroller, passwordcontroller),
             Padding(
-                padding: EdgeInsets.only(right: 50),
+                padding: EdgeInsets.only(right: MediaQuery.of(context).size.width/7),
                 child: Row(
                   children: <Widget>[
                     Expanded(
                         child:
 
                         Padding(
-                          padding: EdgeInsets.only(top: 40),
+                          padding: EdgeInsets.only(top: MediaQuery.of(context).size.height/20, right: MediaQuery.of(context).size.width/20),
                           child:
 
                           Text(
-                            'Inserisci le credenziali per continuare...',
+                            'Inserisci le credenziali...',
                             textAlign: TextAlign.end,
                             style: testosemplice12,
                           ),
@@ -141,7 +141,7 @@ class LoginState extends State<Login>{
                         ),
                         child: Icon(
                           Icons.arrow_forward,
-                          size: 40,
+                          size: MediaQuery.of(context).size.height/17,
                           color: Colors.white,
                         ),
                       ),
@@ -157,9 +157,9 @@ class LoginState extends State<Login>{
   }
 
 
-  Widget spazio(double spazio){
+  Widget spazio(context,spazio){
     return Padding(
-      padding: EdgeInsets.only(bottom: spazio),
+      padding: EdgeInsets.only(bottom: MediaQuery.of(context).size.height/spazio),
     );
   }
 
@@ -171,7 +171,7 @@ class LoginState extends State<Login>{
              // Navigator.of(context).push(MaterialPageRoute(builder: (c) => PasswordDimenticata(emailcorrente: emailcontroller.text,)));
             },
             child: Text("Password dimenticata?",
-                style: testosemplice16)
+                style: testosemplice16sottolineato)
         )
     );
   }
@@ -183,7 +183,7 @@ class LoginState extends State<Login>{
             child: Text("Oppure accedi con",
                 style: testosemplice16)
         ),
-        spazio(15),
+        spazio(context,45),
         Center(
           child:
           Row(
