@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 
 final baseurl = "http://87.27.62.247/";  //Cambiare l'url base, il server è diverso
@@ -47,6 +46,13 @@ const List<Color> greengradient = [
 ];
 
 List<Color> wingradient = [
+  Color(0xFF0EDED2),
+  Color(0xFF03A0FE),
+  Color(0xFF0EDED2),
+  Color(0xFF03A0FE),
+];
+
+const List<Color> signInGradients = [
   Color(0xFF0EDED2),
   Color(0xFF03A0FE),
   Color(0xFF0EDED2),
